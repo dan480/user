@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}table{% endblock %}
+
+{% block content %}
+    <h1>Table with users</h1>
+
+<div class="toolbar">
+<div class="toolbar_inner">
+<p><input type="submit" value="Block">
+<input type="submit" value="Unblock">
+<input type="submit" value="Delete"></p>
+</div>
+</div>
+<table border="1">
+	<tr>
+		<td align="center">Select / deselect <input type="checkbox" name=""></td>
+		<td align="center">Name</td>
+		<td align="center">Email</td>
+		<td align="center">Last joined</td>
+		<td align="center">Last login</td>
+		<td align="center">Status</td>
+	</tr>
+	{% for users in users_list %}
+		<tr>
+			<td align="center"><ul><input type="checkbox" name=""></ul></td>
+			<td align="right">{{ users.user.first_name }}</td>
+			<td align="right">{{ users.user.email }}</td>
+			<td align="right">{{ users.user.date_joined }}</td>
+			<td align="right">{{ users.user.last_login }}</td>
+			<td align="right" bgcolor="lime">Unblock</td>
+		</tr>
+	{% endfor %}
+</table
+
+{% endblock content %}
+
