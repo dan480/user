@@ -45,7 +45,8 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'account/register.html', {'user_form': user_form})
-    
+
+
 def userlist(request):
     users_list = Profile.objects.all()
 
@@ -53,10 +54,9 @@ def userlist(request):
             "users_list": users_list,
         }
     return render(request, 'account/table.html', context)
-    
+
+
 def block(sender, user, request, **kwargs):    
     user.profile.is_block = True
     user.profile.save()
 
-
-    
