@@ -7,13 +7,13 @@ from django.urls import reverse_lazy
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-+_66937y&x6t60=mt=2^6wh(7d8i9dz!&ezftnd3125le$l5cd'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-+_66937y&x6t60=mt=2^6wh(7d8i9dz!&ezftnd3125le$l5cd')
+SECRET_KEY = 'django-insecure-+_66937y&x6t60=mt=2^6wh(7d8i9dz!&ezftnd3125le$l5cd'
+#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-+_66937y&x6t60=mt=2^6wh(7d8i9dz!&ezftnd3125le$l5cd')
 
 # DEBUG = False
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['table-user.herokuapp.com', '127.0.0.1']
 
 LOGIN_REDIRECT_URL = reverse_lazy('table')
 LOGIN_URL = reverse_lazy('login')
